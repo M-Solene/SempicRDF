@@ -5,7 +5,11 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterm="http://purl.org/dc/terms/"
+     xmlns:db="http://fr.dbpedia.org/resource/">
     <owl:Ontology rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl"/>
     
 
@@ -105,6 +109,18 @@
         <rdfs:label xml:lang="fr">Animal</rdfs:label>
     </owl:Class>
     
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cow -->
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cow">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
+        <rdfs:label>Cow</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
+        <rdfs:label>Dog</rdfs:label>
+    </owl:Class>   
 
 
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction -->
@@ -114,7 +130,6 @@
     </owl:Class>
     
 
-
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person -->
 
     <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person">
@@ -123,14 +138,12 @@
     </owl:Class>
     
 
-
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo -->
 
     <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo">
         <rdfs:label>Photo</rdfs:label>
     </owl:Class>
     
-
 
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place -->
 
@@ -139,15 +152,6 @@
         <rdfs:label>Place</rdfs:label>
     </owl:Class>
     
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog -->
-
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog">
-        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
-        <rdfs:label>Dog</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -162,6 +166,7 @@
             <rdf:Description rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
             <rdf:Description rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
             <rdf:Description rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place"/>
+            <rdf:Description rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

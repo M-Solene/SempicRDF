@@ -195,8 +195,6 @@ public class RDFStore {
         m.add(pRes, SempicOnto.depicts, newAnimal);
         m.write(System.out, "turtle");
 
-        //s.deleteModel(m);
-        //s.cnx.load(m);
         List<Resource> classes = s.listSubClassesOf(SempicOnto.Depiction);
         classes.forEach(c -> {System.out.println(c);});
 
@@ -204,9 +202,5 @@ public class RDFStore {
         instances.forEach(i -> {
             System.out.println(i.getProperty(RDFS.label));
         });
-
-        //s.readPhoto(1).getModel().write(System.out,"turtle");
-        // print the graph on the standard output
-        //pRes.getModel().write(System.out);
     }
 }
