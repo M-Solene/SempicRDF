@@ -22,8 +22,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
 
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts -->
 
@@ -35,7 +33,6 @@
     </owl:ObjectProperty>
     
 
-
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy -->
 
     <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy">
@@ -44,8 +41,7 @@
         <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
         <rdfs:label>taken by</rdfs:label>
     </owl:ObjectProperty>
-    
-
+   
 
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn -->
 
@@ -57,6 +53,16 @@
         <rdfs:label>taken in</rdfs:label>
     </owl:ObjectProperty>
     
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen -->
+
+    <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#DataType"/>
+        <rdfs:label>taken when</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
     <!-- 
@@ -66,12 +72,9 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
     
-
-
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#albumId -->
-
+    
     <owl:DatatypeProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#albumId">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -97,10 +100,24 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
+     
+     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo -->
 
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo">
+        <rdfs:label>Photo</rdfs:label>
+    </owl:Class>
+     
+     
+      <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction">
+        <rdfs:label>Depiction</rdfs:label>
+    </owl:Class>
+    
     
 
-
+     <!-- ///////////// Animaux ///////////////// -->
+     
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal -->
 
     <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal">
@@ -109,25 +126,57 @@
         <rdfs:label xml:lang="fr">Animal</rdfs:label>
     </owl:Class>
     
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cow -->
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cow">
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mammal -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mammal">
         <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
+        <rdfs:label>Cow</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cow -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cow">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mammal"/>
         <rdfs:label>Cow</rdfs:label>
     </owl:Class>
     
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog -->
 
     <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog">
-        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mammal"/>
         <rdfs:label>Dog</rdfs:label>
-    </owl:Class>   
-
-
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction -->
-
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction">
-        <rdfs:label>Depiction</rdfs:label>
     </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cat -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cat">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mammal"/>
+        <rdfs:label>Cat</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Bird -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Bird">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
+        <rdfs:label>Bird</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Ostrich -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Ostrich">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Bird"/>
+        <rdfs:label>Ostrich</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Fish -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Fish">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
+        <rdfs:label>Fish</rdfs:label>
+    </owl:Class>      
+
+
+   <!-- //////////// Personnes ////////////////// -->
     
 
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person -->
@@ -137,19 +186,140 @@
         <rdfs:label>Person</rdfs:label>
     </owl:Class>
     
-
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo -->
-
-    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo">
-        <rdfs:label>Photo</rdfs:label>
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Friend -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Friend">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
+        <rdfs:label>Friend</rdfs:label>
     </owl:Class>
     
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
+        <owl:disjointWith rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male"/>
+        <rdfs:label>Female</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
+        <owl:disjointWith rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female"/>
+        <rdfs:label>Male</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Family_member -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Family_member">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
+        <rdfs:label>Family member</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Brother -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Brother">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male"/>
+        <owl:disjointWith rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Father"/>
+        <rdfs:label>Brother</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Sister -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Sister">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female"/>
+        <owl:disjointWith rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mother"/>
+        <rdfs:label>Sister</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Father -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Father">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male"/>
+        <owl:disjointWith rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Brother"/>
+        <rdfs:label>Father</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mother -->
+    
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mother">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female"/>
+        <owl:disjointWith rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Sister"/>
+        <rdfs:label>Mother</rdfs:label>
+    </owl:Class>
+    
+    <!-- /////////////// Lieux //////////////// -->
 
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place -->
 
     <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place">
         <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction"/>
         <rdfs:label>Place</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mountain -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mountain">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place"/>
+        <rdfs:label>Mountain</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Beach -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Beach">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place"/>
+        <rdfs:label>Beach</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Forest -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Forest">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place"/>
+        <rdfs:label>Forest</rdfs:label>
+    </owl:Class>
+    
+    <!-- Dates -->
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Date -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Date">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Depiction"/>
+        <rdfs:label>Date</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Season -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Season">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Date"/>
+        <rdfs:label>Season</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Summer -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Summer">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Season"/>
+        <rdfs:label>Summer</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Winter -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Winter">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Season"/>
+        <rdfs:label>Winter</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Spring -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Spring">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Season"/>
+        <rdfs:label>Spring</rdfs:label>
+    </owl:Class>
+    
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Autumn -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Autumn">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Season"/>
+        <rdfs:label>Autumn</rdfs:label>
     </owl:Class>
     
     <!-- 
