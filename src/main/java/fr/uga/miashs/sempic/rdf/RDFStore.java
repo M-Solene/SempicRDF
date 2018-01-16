@@ -42,6 +42,7 @@ public class RDFStore {
 
     public RDFStore() {
         cnx = RDFConnectionFactory.connect(ENDPOINT_QUERY, ENDPOINT_UPDATE, ENDPOINT_GSP);
+        cnx.load("sempic.ttl");
     }
 
     /**
@@ -194,6 +195,7 @@ public class RDFStore {
         newAnimal.addLiteral(RDFS.label, "Medor");
         m.add(pRes, SempicOnto.depicts, newAnimal);
         m.write(System.out, "turtle");
+        m.commit();
 
         List<Resource> classes = s.listSubClassesOf(SempicOnto.Depiction);
         classes.forEach(c -> {System.out.println(c);});
