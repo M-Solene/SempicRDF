@@ -39,6 +39,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
+        <rdfs:range rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
         <rdfs:label>taken by</rdfs:label>
     </owl:ObjectProperty>
    
@@ -63,13 +64,6 @@
         <rdfs:label>taken when</rdfs:label>
     </owl:ObjectProperty>
     
-    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#hasTitle -->
-    <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#hasTitle">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
-        <rdfs:label>has title</rdfs:label>
-    </owl:ObjectProperty>
     
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isType -->
     <owl:ObjectProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isType">
@@ -130,16 +124,27 @@
     <owl:DatatypeProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#albumId">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
         <rdfs:label>in album</rdfs:label>
     </owl:DatatypeProperty>
     
-
+<!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#hasTitle -->
+    
+    <owl:DatatypeProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#hasTitle">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
+        <rdfs:label>has title</rdfs:label>
+    </owl:DatatypeProperty>
 
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#ownerId -->
 
     <owl:DatatypeProperty rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#ownerId">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Photo"/>
+        <rdfs:range rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person"/>
+        <owl:inverseOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takeBy" />
         <rdfs:label>has owner</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -182,7 +187,7 @@
     
     <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mammal">
         <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Animal"/>
-        <rdfs:label>Cow</rdfs:label>
+        <rdfs:label>Mammal</rdfs:label>
     </owl:Class>
     
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Horse -->
