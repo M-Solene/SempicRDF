@@ -42,7 +42,6 @@ public class RDFStore {
 
     public RDFStore() {
         cnx = RDFConnectionFactory.connect(ENDPOINT_QUERY, ENDPOINT_UPDATE, ENDPOINT_GSP);
-        cnx.load("sempic.ttl");
     }
 
     /**
@@ -131,7 +130,7 @@ public class RDFStore {
         return m.listSubjects().toList();
     }
 
-    
+
     public List<Resource> createAnonInstances(List<Resource> classes) {
         Model m = ModelFactory.createDefaultModel();
         List<Resource> res = new ArrayList<>();
@@ -195,9 +194,13 @@ public class RDFStore {
         newAnimal.addLiteral(RDFS.label, "Medor");
         m.add(pRes, SempicOnto.depicts, newAnimal);
         m.write(System.out, "turtle");
-        m.commit();
+        
+        Resource newPerson = m.createResource(SempicOnto.Person);
+        newPerson.addLiteral(RDFS.label, "Patrick");
+        m.add(pRes, SempicOnto.depicts, newPerson);
+        m.write(System.out, "turtle");
 
-        List<Resource> classes = s.listSubClassesOf(SempicOnto.Depiction);
+        List<Resource> classes = s.listSubClassesOf(SempicOnto.Animal);
         classes.forEach(c -> {System.out.println(c);});
 
         List<Resource> instances = s.createAnonInstances(classes);
