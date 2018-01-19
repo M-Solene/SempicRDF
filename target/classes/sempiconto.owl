@@ -374,6 +374,13 @@
         <rdfs:label>City</rdfs:label>
     </owl:Class>
     
+    <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Savanna -->
+
+    <owl:Class rdf:about="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Savanna">
+        <rdfs:subClassOf rdf:resource="http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Place"/>
+        <rdfs:label>Savanna</rdfs:label>
+    </owl:Class>
+    
     <!-- /////////////// Dates ///////////////// -->
     
     <!-- http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Date -->

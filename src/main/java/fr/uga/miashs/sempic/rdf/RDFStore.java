@@ -235,9 +235,43 @@ public class RDFStore {
         m.add(pRes3, SempicOnto.takenIn, newGrenoble);
         m.add(pRes3, SempicOnto.takenBy, newPierre);
         
+        
+        
+        // Album 2, de l'owner 1
+        // Photo 1 : Descrption -> Une autruche dans la savanne
+        Resource pRes4 = s.createPhoto(4, 2, 1);
+        
+        Resource newOstrich = m.createResource(SempicOnto.Ostrich);
+        Resource newSavanna = m.createResource(SempicOnto.Savanna);
+        
+        m.add(pRes4, SempicOnto.depicts, newOstrich);
+        m.add(pRes4, SempicOnto.takenWhen, "2014-10-10");
+        m.add(pRes4, SempicOnto.takenIn, newSavanna);
+        m.add(pRes4, SempicOnto.takenBy, newPierre);
+        
+        // Photo 2 : Description ->
+        Resource pRes5 = s.createPhoto(5, 2, 1);
+        Resource newNight = m.createResource (SempicOnto.Nigth);
+        Resource newMountain = m.createResource (SempicOnto.Mountain);
+       
+        m.add(pRes5, SempicOnto.takenWhen, "2014-10-10");
+        m.add(pRes5, SempicOnto.takenWhen, newNight);
+        m.add(pRes5, SempicOnto.takenIn, newMountain);
+        m.add(pRes5, SempicOnto.takenBy, newPierre);
+        
+        // Photo 3 : Description ->
+        Resource pRes6 = s.createPhoto(6, 2, 1);
+        Resource newBeach = m.createResource (SempicOnto.Beach);
+        Resource newHollidays = m.createResource (SempicOnto.Hollidays);
+       
+        m.add(pRes5, SempicOnto.takenWhen, "2014-05-07");
+        m.add(pRes5, SempicOnto.takenWhen, newHollidays);
+        m.add(pRes5, SempicOnto.takenIn, newBeach);
+        m.add(pRes5, SempicOnto.takenBy, newPierre);
+        
         // Album 3, de l'owner 2
         // Photo 1 : Description -> Pendaison de crémaillère avec Elisa, Marcella, Sophia et Lucas
-        Resource pRes4 = s.createPhoto(7, 3, 2);
+        Resource pRes7 = s.createPhoto(7, 3, 2);
         
         Resource newElisa = m.createResource(SempicOnto.Female);
         Resource newMarcella = m.createResource(SempicOnto.Female);
@@ -255,23 +289,26 @@ public class RDFStore {
             m.add(newLucas, SempicOnto.isFriend, newSophia);
         Resource newParty = m.createResource(SempicOnto.House_warming_party);
         
-        m.add(pRes4, SempicOnto.depicts, newElisa);
-        m.add(pRes4, SempicOnto.depicts, newMarcella);
-        m.add(pRes4, SempicOnto.depicts, newSophia);
-        m.add(pRes4, SempicOnto.depicts, newLucas);
-        m.add(pRes4, SempicOnto.takenWhen, "2016-08-02");
-        m.add(pRes4, SempicOnto.takenBy, newElisa);
+        m.add(pRes7, SempicOnto.depicts, newElisa);
+        m.add(pRes7, SempicOnto.depicts, newMarcella);
+        m.add(pRes7, SempicOnto.depicts, newSophia);
+        m.add(pRes7, SempicOnto.depicts, newLucas);
+        m.add(pRes7, SempicOnto.takenWhen, "2016-08-02");
+        m.add(pRes7, SempicOnto.takenBy, newElisa);
         
-        // Photo 2
-        Resource pRes5 = s.createPhoto(8, 3, 2);
+        // Photo 2 -> Description : Lucie, Emilie et Suzie jouent aux jeux vidéos
+        Resource pRes8 = s.createPhoto(8, 3, 2);
         
         Resource newLucie = m.createResource(SempicOnto.Female);
+        newLucie.addLiteral(RDFS.label, "Lucie");
         Resource newEmilie = m.createResource(SempicOnto.Female);
+        newEmilie.addLiteral(RDFS.label, "Emilie");
         Resource newSuzie = m.createResource(SempicOnto.Female);
+        newSuzie.addLiteral(RDFS.label, "Suzie");
         
-        m.add(pRes5, SempicOnto.depicts, newLucie);
-        m.add(pRes5, SempicOnto.depicts, newEmilie);
-        m.add(pRes5, SempicOnto.depicts, newSuzie);
+        m.add(pRes8, SempicOnto.depicts, newLucie);
+        m.add(pRes8, SempicOnto.depicts, newEmilie);
+        m.add(pRes8, SempicOnto.depicts, newSuzie);
         
         Resource newVideoGame = m.createResource(SempicOnto.Videogame);
         
@@ -279,11 +316,41 @@ public class RDFStore {
         m.add(newEmilie, SempicOnto.plays, newVideoGame);
         m.add(newSuzie, SempicOnto.plays, newVideoGame);
         
-        // Photo 3
+        m.add(pRes8, SempicOnto.takenWhen, "2016-15-02");
+        m.add(pRes8, SempicOnto.takenBy, newElisa);
         
-        // Photo 4
+        // Photo 3 -> Description : Elisa et sa maman Madeleine
+        Resource pRes9 = s.createPhoto(9, 3, 2);
+        
+        Resource newMadeleine = m.createResource(SempicOnto.Female);
+        newMadeleine.addLiteral(RDFS.label, "Madeleine");
+        
+        m.add(pRes8, SempicOnto.depicts, newMadeleine);
+        m.add(pRes8, SempicOnto.depicts, newElisa);
+        m.add(newMadeleine, SempicOnto.isParent, newElisa);
+        
+        m.add(pRes7, SempicOnto.takenWhen, "2001-08-03");
+        m.add(pRes7, SempicOnto.takenBy, newElisa);
         
         
+        // Photo 4 : Description -> Deux amis d'Elis jouent à un jeu de plateau
+        Resource pRes10 = s.createPhoto(10, 3, 2);
+        
+        Resource newSam = m.createResource(SempicOnto.Male);
+        newSam.addLiteral(RDFS.label, "Sam");
+        Resource newElisabeth = m.createResource (SempicOnto.Female);
+        newElisabeth.addLiteral(RDFS.label, "Elisabeth");
+        Resource newBoardGame = m.createResource (SempicOnto.Boardgame);
+        
+        m.add(pRes9, SempicOnto.depicts, newSam);
+        m.add(pRes8, SempicOnto.depicts, newElisabeth);
+            m.add(newSam, SempicOnto.plays, newBoardGame);
+            m.add(newElisabeth, SempicOnto.plays, newBoardGame);
+            m.add(newElisa, SempicOnto.isFriend, newSam);
+            m.add(newElisa, SempicOnto.isFriend, newElisabeth);
+            m.add(newSam, SempicOnto.isFriend, newElisabeth);
+        m.add(pRes7, SempicOnto.takenWhen, "2017-09-11");
+        m.add(pRes7, SempicOnto.takenBy, newElisa);
         
         
         
