@@ -353,8 +353,7 @@ public class RDFStore {
         
         
         m.write(System.out, "turtle");
-        
-        m.close();
+
 
         /* List<Resource> classes = s.listSubClassesOf(SempicOnto.Animal);
         classes.forEach(c -> {System.out.println(c);});
