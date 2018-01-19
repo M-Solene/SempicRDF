@@ -54,3 +54,13 @@ WHERE {
 	?pictures ws:depicts ?category .
 	?category a ws:Hollidays .
 }
+
+# Select one picture with Elisa's parent
+SELECT ?picture
+WHERE {
+	?picture a ws:Photo .
+	?picture ws:depicts ?parent .
+	?parent ws:isParent ?elisa .
+	?elisa rdfs:label "Elisa" .
+}
+LIMIT 1

@@ -191,7 +191,6 @@ public class RDFStore {
         // Album 1, de l'owner 1
         // Photo 1 : Description -> Photo de Patrick et Medor, prise par Pierre à Grenoble le 05/01/2017 
         Resource pRes = s.createPhoto(1, 1, 1);
-
         Resource newMedor = m.createResource(SempicOnto.Dog);
         newMedor.addLiteral(RDFS.label, "Medor");
         m.add(pRes, SempicOnto.depicts, newMedor);
@@ -353,8 +352,9 @@ public class RDFStore {
         m.add(pRes7, SempicOnto.takenBy, newElisa);
         
         
-        
         m.write(System.out, "turtle");
+        
+        m.close();
 
         /* List<Resource> classes = s.listSubClassesOf(SempicOnto.Animal);
         classes.forEach(c -> {System.out.println(c);});

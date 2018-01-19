@@ -1,0 +1,170 @@
+_:b0    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#City> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Grenoble" .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/1>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male> ;
+                  <http://www.w3.org/2000/01/rdf-schema#label>
+                          "Patrick"
+                ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Dog> ;
+                  <http://www.w3.org/2000/01/rdf-schema#label>
+                          "Medor"
+                ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy>
+                _:b1 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn>
+                _:b0 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                "2017-01-05" .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/7>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                _:b2 , _:b3 , _:b4 , _:b5 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy>
+                _:b5 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                "2017-09-11" , "2001-08-03" , "2016-08-02" .
+
+_:b6    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Boardgame> .
+
+_:b7    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sam" ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isFriend>
+                _:b8 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#plays>
+                _:b6 .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/5>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy>
+                _:b1 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Beach> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Mountain> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                "2014-05-07" , "2014-10-10" ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Hollidays> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Nigth> ] .
+
+_:b4    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Marcella" ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isFriend>
+                _:b2 , _:b3 .
+
+_:b5    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Elisa" ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isFriend>
+                _:b8 , _:b7 , _:b2 , _:b3 , _:b4 .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/4>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Ostrich> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy>
+                _:b1 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Savanna> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                "2014-10-10" .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/9>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                _:b7 .
+
+_:b8    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Elisabeth" ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#plays>
+                _:b6 .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/3>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Cat> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy>
+                _:b1 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn>
+                _:b0 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                "2017-08-27" .
+
+_:b1    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Pierre" .
+
+_:b9    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Videogame> .
+
+[ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#House_warming_party> ] .
+
+_:b3    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Sophia" .
+
+_:b10   a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person> .
+
+_:b2    a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Male> ;
+        <http://www.w3.org/2000/01/rdf-schema#label>
+                "Lucas" ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isFriend>
+                _:b3 .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/2>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                _:b10 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Person> ;
+                  <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isFriend>
+                          _:b10
+                ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Horse> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Horse> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy>
+                _:b1 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenIn>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Beach> ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Summer> ] .
+
+<http://http://miashs.univ-grenoble-alpes.fr/photo/8>
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                _:b8 , _:b5 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+                  <http://www.w3.org/2000/01/rdf-schema#label>
+                          "Madeleine" ;
+                  <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#isParent>
+                          _:b5
+                ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+                  <http://www.w3.org/2000/01/rdf-schema#label>
+                          "Suzie" ;
+                  <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#plays>
+                          _:b9
+                ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+                  <http://www.w3.org/2000/01/rdf-schema#label>
+                          "Emilie" ;
+                  <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#plays>
+                          _:b9
+                ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#depicts>
+                [ a       <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#Female> ;
+                  <http://www.w3.org/2000/01/rdf-schema#label>
+                          "Lucie" ;
+                  <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#plays>
+                          _:b9
+                ] ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenBy>
+                _:b5 ;
+        <http://miashs.univ-grenoble-alpes.fr/ontologies/sempic.owl#takenWhen>
+                "2016-15-02" .
