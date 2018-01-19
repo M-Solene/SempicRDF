@@ -186,26 +186,115 @@ public class RDFStore {
 
     public static void main(String[] args) {
         RDFStore s = new RDFStore();
-
+        Model m = ModelFactory.createDefaultModel();
+        
+        // Album 1, de l'owner 1
+        // Photo 1 : Description -> Photo de Patrick et Medor, prise par Pierre à Grenoble le 05/01/2017 
         Resource pRes = s.createPhoto(1, 1, 1);
 
-        Model m = ModelFactory.createDefaultModel();
-        Resource newAnimal = m.createResource(SempicOnto.Animal);
-        newAnimal.addLiteral(RDFS.label, "Medor");
-        m.add(pRes, SempicOnto.depicts, newAnimal);
-        m.write(System.out, "turtle");
+        Resource newMedor = m.createResource(SempicOnto.Dog);
+        newMedor.addLiteral(RDFS.label, "Medor");
+        m.add(pRes, SempicOnto.depicts, newMedor);
+        Resource newPatrick = m.createResource(SempicOnto.Male);
+        newPatrick.addLiteral(RDFS.label, "Patrick");
+        m.add(pRes, SempicOnto.depicts, newPatrick);
+        Resource newPierre = m.createResource(SempicOnto.Male);
+        newPierre.addLiteral(RDFS.label, "Pierre");
+        m.add(pRes, SempicOnto.takenBy, newPierre);
+        m.add(pRes, SempicOnto.takenWhen, "2017-01-05");
+        Resource newGrenoble = m.createResource(SempicOnto.City);
+        newGrenoble.addLiteral(RDFS.label, "Grenoble");
+        m.add(pRes, SempicOnto.takenIn, newGrenoble);
         
-        Resource newPerson = m.createResource(SempicOnto.Person);
-        newPerson.addLiteral(RDFS.label, "Patrick");
-        m.add(pRes, SempicOnto.depicts, newPerson);
+        // Photo 2 : Description -> 2 hommes + 2 chevaux à la plage, prise par Pierre à l'île Maurice, en été
+        Resource pRes2 = s.createPhoto(2, 1, 1);
+        
+        Resource newHorse1 = m.createResource(SempicOnto.Horse);
+        Resource newHorse2 = m.createResource(SempicOnto.Horse);
+        Resource newAnonymous1 = m.createResource(SempicOnto.Person);
+        Resource newAnonymous2 = m.createResource(SempicOnto.Person);
+        Resource newPlaceBeach = m.createResource(SempicOnto.Beach);
+        Resource newSummer = m.createResource(SempicOnto.Summer);
+        
+        m.add(pRes2, SempicOnto.depicts, newHorse1);
+        m.add(pRes2, SempicOnto.depicts, newHorse2);
+        m.add(pRes2, SempicOnto.depicts, newAnonymous1);
+        m.add(pRes2, SempicOnto.depicts, newAnonymous2);
+            m.add(newAnonymous1, SempicOnto.isFriend, newAnonymous2);
+        m.add(pRes2, SempicOnto.takenWhen, newSummer);
+        m.add(pRes2, SempicOnto.takenIn, newPlaceBeach);
+        m.add(pRes2, SempicOnto.takenBy, newPierre);
+       
+        // Photo 3 : Description -> Photo de Félix le chat, prise par Pierre à Grenoble, le 27/08/2017
+        Resource pRes3 = s.createPhoto(3, 1, 1);
+        
+        Resource newFelix = m.createResource(SempicOnto.Cat);
+        
+        m.add(pRes3, SempicOnto.depicts, newFelix);
+        m.add(pRes3, SempicOnto.takenWhen, "2017-08-27");
+        m.add(pRes3, SempicOnto.takenIn, newGrenoble);
+        m.add(pRes3, SempicOnto.takenBy, newPierre);
+        
+        // Album 3, de l'owner 2
+        // Photo 1 : Description -> Pendaison de crémaillère avec Elisa, Marcella, Sophia et Lucas
+        Resource pRes4 = s.createPhoto(7, 3, 2);
+        
+        Resource newElisa = m.createResource(SempicOnto.Female);
+        Resource newMarcella = m.createResource(SempicOnto.Female);
+        Resource newSophia = m.createResource(SempicOnto.Female);
+        Resource newLucas = m.createResource(SempicOnto.Male);
+        newElisa.addLiteral(RDFS.label, "Elisa");
+        newMarcella.addLiteral(RDFS.label, "Marcella");
+        newSophia.addLiteral(RDFS.label, "Sophia");
+        newLucas.addLiteral(RDFS.label, "Lucas");
+            m.add(newElisa, SempicOnto.isFriend, newMarcella);
+            m.add(newElisa, SempicOnto.isFriend, newSophia);
+            m.add(newElisa, SempicOnto.isFriend, newLucas);
+            m.add(newMarcella, SempicOnto.isFriend, newSophia);
+            m.add(newMarcella, SempicOnto.isFriend, newLucas);
+            m.add(newLucas, SempicOnto.isFriend, newSophia);
+        Resource newParty = m.createResource(SempicOnto.House_warming_party);
+        
+        m.add(pRes4, SempicOnto.depicts, newElisa);
+        m.add(pRes4, SempicOnto.depicts, newMarcella);
+        m.add(pRes4, SempicOnto.depicts, newSophia);
+        m.add(pRes4, SempicOnto.depicts, newLucas);
+        m.add(pRes4, SempicOnto.takenWhen, "2016-08-02");
+        m.add(pRes4, SempicOnto.takenBy, newElisa);
+        
+        // Photo 2
+        Resource pRes5 = s.createPhoto(8, 3, 2);
+        
+        Resource newLucie = m.createResource(SempicOnto.Female);
+        Resource newEmilie = m.createResource(SempicOnto.Female);
+        Resource newSuzie = m.createResource(SempicOnto.Female);
+        
+        m.add(pRes5, SempicOnto.depicts, newLucie);
+        m.add(pRes5, SempicOnto.depicts, newEmilie);
+        m.add(pRes5, SempicOnto.depicts, newSuzie);
+        
+        Resource newVideoGame = m.createResource(SempicOnto.Videogame);
+        
+        m.add(newLucie, SempicOnto.plays, newVideoGame);
+        m.add(newEmilie, SempicOnto.plays, newVideoGame);
+        m.add(newSuzie, SempicOnto.plays, newVideoGame);
+        
+        // Photo 3
+        
+        // Photo 4
+        
+        
+        
+        
+        
         m.write(System.out, "turtle");
 
-        List<Resource> classes = s.listSubClassesOf(SempicOnto.Animal);
+        /* List<Resource> classes = s.listSubClassesOf(SempicOnto.Animal);
         classes.forEach(c -> {System.out.println(c);});
 
         List<Resource> instances = s.createAnonInstances(classes);
         instances.forEach(i -> {
             System.out.println(i.getProperty(RDFS.label));
-        });
+        }); */
     }
 }
